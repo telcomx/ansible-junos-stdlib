@@ -21,7 +21,7 @@
 <!-- end analytics -->
 
   
-  <title>Ansible Documentation &mdash; Ansible Documentation</title>
+  <title>Detailed Guides &mdash; Ansible Documentation</title>
   
 
   
@@ -58,8 +58,9 @@
   
 
   
-    <link rel="top" title="Ansible Documentation" href="#"/>
-        <link rel="next" title="Introduction" href="intro.html"/> 
+    <link rel="top" title="Ansible Documentation" href="index.html"/>
+        <link rel="next" title="Amazon Web Services Guide" href="guide_aws.html"/>
+        <link rel="prev" title="supervisorctl - Manage the state of a program or group of programs running via Supervisord" href="supervisorctl_module.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
@@ -91,11 +92,11 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div style='background-color:#64C5C7'>
         <br/>
-        <center><a href="#"><img src="http://cdn2.hubspot.net/hub/330046/file-445792629-png/ANSI_logotype_web_white.png" style="border-radius:0;background-color:#64C5C7;width:214px;height:26px;margin:'auto auto auto auto'"></a></center>
+        <center><a href="index.html"><img src="http://cdn2.hubspot.net/hub/330046/file-445792629-png/ANSI_logotype_web_white.png" style="border-radius:0;background-color:#64C5C7;width:214px;height:26px;margin:'auto auto auto auto'"></a></center>
         <br/>      
       </div>
       <div class="wy-side-nav-search" style="background-color:#64C5C7;height=80px;margin:'auto auto auto auto'">
-        <!-- <a href="#" class="icon icon-home"> Ansible Documentation</a> -->
+        <!-- <a href="index.html" class="icon icon-home"> Ansible Documentation</a> -->
         <!-- <form class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
   <input type="hidden" name="check_keywords" value="yes" />
@@ -162,7 +163,7 @@
       <div id="menu-id" class="wy-menu wy-menu-vertical" data-spy="affix">
         
         
-            <ul>
+            <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="intro_installation.html">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_getting_started.html">Getting Started</a></li>
@@ -220,7 +221,7 @@
 <li class="toctree-l2"><a class="reference internal" href="list_of_web_infrastructure_modules.html">Web Infrastructure Modules</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="guides.html">Detailed Guides</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Detailed Guides</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="guide_aws.html">Amazon Web Services Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide_rax.html">Rackspace Cloud Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide_gce.html">Google Cloud Platform Guide</a></li>
@@ -363,11 +364,11 @@
       <div class="wy-nav-content">
         <div class="rst-content">
           <ul class="wy-breadcrumbs">
-  <li><a href="#">Docs</a> &raquo;</li>
-  <li><a href="">Ansible Documentation</a></li>
+  <li><a href="index.html">Docs</a> &raquo;</li>
+  <li><a href="">Detailed Guides</a></li>
   
     <li class="wy-breadcrumbs-aside">
-      <a href="https://github.com/ansible/ansible/blob/devel/docsite/rst/index.rst" class="icon icon-github"> Edit on GitHub</a>
+      <a href="https://github.com/ansible/ansible/blob/devel/docsite/rst/guides.rst" class="icon icon-github"> Edit on GitHub</a>
     </li>
   
 </ul>
@@ -375,38 +376,19 @@
 
           <div id="page-content">
           
-  <div class="section" id="ansible-documentation">
-<h1>Ansible Documentation<a class="headerlink" href="#ansible-documentation" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="about-ansible">
-<h2>About Ansible<a class="headerlink" href="#about-ansible" title="Permalink to this headline">¶</a></h2>
-<p>Welcome to the Ansible documentation!</p>
-<p>Ansible is an IT automation tool.  It can configure systems, deploy software, and orchestrate more advanced IT tasks
-such as continuous deployments or zero downtime rolling updates.</p>
-<p>Ansible&#8217;s goals are foremost those of simplicity and maximum ease of use. It also has a strong focus on security and reliability, featuring a minimum of moving parts, usage of OpenSSH for transport (with an accelerated socket mode and pull modes as alternatives), and a language that is designed around auditability by humans &#8211; even those not familiar with the program.</p>
-<p>We believe simplicity is relevant to all sizes of environments and design for busy users of all types &#8211; whether this means developers, sysadmins, release engineers, IT managers, and everywhere in between. Ansible is appropriate for managing small setups with a handful of instances as well as enterprise environments with many thousands.</p>
-<p>Ansible manages machines in an agentless manner. There is never a question of how to
-upgrade remote daemons or the problem of not being able to manage systems because daemons are uninstalled.  As OpenSSH is one of the most peer reviewed open source components, the security exposure of using the tool is greatly reduced.  Ansible is decentralized &#8211; it relies on your existing OS credentials to control access to remote machines; if needed it can easily connect with Kerberos, LDAP, and other centralized authentication management systems.</p>
-<p>This documentation covers the current released version of Ansible (1.5.3) and also some development version features (1.6).  For recent features, in each section, the version of Ansible where the feature is added is indicated.  Ansible, Inc releases a new major release of Ansible approximately every 2 months.  The core application evolves somewhat conservatively, valuing simplicity in language design and setup, while the community around new modules and plugins being developed and contributed moves very very quickly, typically adding 20 or so new modules in each release.</p>
-<div class="toctree-wrapper compound" id="an-introduction">
+  <div class="section" id="detailed-guides">
+<h1>Detailed Guides<a class="headerlink" href="#detailed-guides" title="Permalink to this headline">¶</a></h1>
+<p>This section is new and evolving.  The idea here is explore particular use cases in greater depth and provide a more &#8220;top down&#8221; explanation of some basic features.</p>
+<div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart Video</a></li>
-<li class="toctree-l1"><a class="reference internal" href="playbooks.html">Playbooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="playbooks_special_topics.html">Playbooks: Special Topics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">About Modules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules_by_category.html">Module Index</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guides.html">Detailed Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developing.html">Developer Information</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tower.html">Ansible Tower</a></li>
-<li class="toctree-l1"><a class="reference internal" href="community.html">Community Information</a></li>
-<li class="toctree-l1"><a class="reference internal" href="galaxy.html">Ansible Galaxy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="YAMLSyntax.html">YAML Syntax</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guru.html">Ansible Guru</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_aws.html">Amazon Web Services Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_rax.html">Rackspace Cloud Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_gce.html">Google Cloud Platform Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_vagrant.html">Using Vagrant and Ansible</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_rolling_upgrade.html">Continuous Delivery and Rolling Upgrades</a></li>
 </ul>
 </div>
-</div>
+<p>Pending topics may include: Docker, Jenkins, Google Compute Engine, Linode/Digital Ocean, Continous Deployment, and more.</p>
 </div>
 
 
@@ -416,8 +398,10 @@ upgrade remote daemons or the problem of not being able to manage systems becaus
   
     <div class="rst-footer-buttons">
       
-        <a href="intro.html" class="btn btn-neutral float-right" title="Introduction"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="guide_aws.html" class="btn btn-neutral float-right" title="Amazon Web Services Guide"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
+      
+        <a href="supervisorctl_module.html" class="btn btn-neutral" title="supervisorctl - Manage the state of a program or group of programs running via Supervisord"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

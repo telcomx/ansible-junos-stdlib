@@ -21,7 +21,7 @@
 <!-- end analytics -->
 
   
-  <title>Ansible Documentation &mdash; Ansible Documentation</title>
+  <title>System Modules &mdash; Ansible Documentation</title>
   
 
   
@@ -58,8 +58,10 @@
   
 
   
-    <link rel="top" title="Ansible Documentation" href="#"/>
-        <link rel="next" title="Introduction" href="intro.html"/> 
+    <link rel="top" title="Ansible Documentation" href="index.html"/>
+        <link rel="up" title="Module Index" href="modules_by_category.html"/>
+        <link rel="next" title="alternatives - Manages alternative programs for common commands" href="alternatives_module.html"/>
+        <link rel="prev" title="subversion - Deploys a subversion repository." href="subversion_module.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
@@ -91,11 +93,11 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div style='background-color:#64C5C7'>
         <br/>
-        <center><a href="#"><img src="http://cdn2.hubspot.net/hub/330046/file-445792629-png/ANSI_logotype_web_white.png" style="border-radius:0;background-color:#64C5C7;width:214px;height:26px;margin:'auto auto auto auto'"></a></center>
+        <center><a href="index.html"><img src="http://cdn2.hubspot.net/hub/330046/file-445792629-png/ANSI_logotype_web_white.png" style="border-radius:0;background-color:#64C5C7;width:214px;height:26px;margin:'auto auto auto auto'"></a></center>
         <br/>      
       </div>
       <div class="wy-side-nav-search" style="background-color:#64C5C7;height=80px;margin:'auto auto auto auto'">
-        <!-- <a href="#" class="icon icon-home"> Ansible Documentation</a> -->
+        <!-- <a href="index.html" class="icon icon-home"> Ansible Documentation</a> -->
         <!-- <form class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
   <input type="hidden" name="check_keywords" value="yes" />
@@ -162,7 +164,7 @@
       <div id="menu-id" class="wy-menu wy-menu-vertical" data-spy="affix">
         
         
-            <ul>
+            <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="intro_installation.html">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_getting_started.html">Getting Started</a></li>
@@ -200,7 +202,7 @@
 <li class="toctree-l2"><a class="reference internal" href="modules.html#introduction">Introduction</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="modules_by_category.html">Module Index</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="modules_by_category.html">Module Index</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="list_of_all_modules.html">All Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="list_of_cloud_modules.html">Cloud Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="list_of_commands_modules.html">Commands Modules</a></li>
@@ -215,7 +217,7 @@
 <li class="toctree-l2"><a class="reference internal" href="list_of_notification_modules.html">Notification Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="list_of_packaging_modules.html">Packaging Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="list_of_source_control_modules.html">Source Control Modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="list_of_system_modules.html">System Modules</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">System Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="list_of_utilities_modules.html">Utilities Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="list_of_web_infrastructure_modules.html">Web Infrastructure Modules</a></li>
 </ul>
@@ -363,49 +365,47 @@
       <div class="wy-nav-content">
         <div class="rst-content">
           <ul class="wy-breadcrumbs">
-  <li><a href="#">Docs</a> &raquo;</li>
-  <li><a href="">Ansible Documentation</a></li>
-  
-    <li class="wy-breadcrumbs-aside">
-      <a href="https://github.com/ansible/ansible/blob/devel/docsite/rst/index.rst" class="icon icon-github"> Edit on GitHub</a>
-    </li>
+  <li><a href="index.html">Docs</a> &raquo;</li>
+  <li><a href="">System Modules</a></li>
   
 </ul>
 <hr/>
 
           <div id="page-content">
           
-  <div class="section" id="ansible-documentation">
-<h1>Ansible Documentation<a class="headerlink" href="#ansible-documentation" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="about-ansible">
-<h2>About Ansible<a class="headerlink" href="#about-ansible" title="Permalink to this headline">¶</a></h2>
-<p>Welcome to the Ansible documentation!</p>
-<p>Ansible is an IT automation tool.  It can configure systems, deploy software, and orchestrate more advanced IT tasks
-such as continuous deployments or zero downtime rolling updates.</p>
-<p>Ansible&#8217;s goals are foremost those of simplicity and maximum ease of use. It also has a strong focus on security and reliability, featuring a minimum of moving parts, usage of OpenSSH for transport (with an accelerated socket mode and pull modes as alternatives), and a language that is designed around auditability by humans &#8211; even those not familiar with the program.</p>
-<p>We believe simplicity is relevant to all sizes of environments and design for busy users of all types &#8211; whether this means developers, sysadmins, release engineers, IT managers, and everywhere in between. Ansible is appropriate for managing small setups with a handful of instances as well as enterprise environments with many thousands.</p>
-<p>Ansible manages machines in an agentless manner. There is never a question of how to
-upgrade remote daemons or the problem of not being able to manage systems because daemons are uninstalled.  As OpenSSH is one of the most peer reviewed open source components, the security exposure of using the tool is greatly reduced.  Ansible is decentralized &#8211; it relies on your existing OS credentials to control access to remote machines; if needed it can easily connect with Kerberos, LDAP, and other centralized authentication management systems.</p>
-<p>This documentation covers the current released version of Ansible (1.5.3) and also some development version features (1.6).  For recent features, in each section, the version of Ansible where the feature is added is indicated.  Ansible, Inc releases a new major release of Ansible approximately every 2 months.  The core application evolves somewhat conservatively, valuing simplicity in language design and setup, while the community around new modules and plugins being developed and contributed moves very very quickly, typically adding 20 or so new modules in each release.</p>
-<div class="toctree-wrapper compound" id="an-introduction">
+  <div class="section" id="system-modules">
+<h1>System Modules<a class="headerlink" href="#system-modules" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart Video</a></li>
-<li class="toctree-l1"><a class="reference internal" href="playbooks.html">Playbooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="playbooks_special_topics.html">Playbooks: Special Topics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">About Modules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules_by_category.html">Module Index</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guides.html">Detailed Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developing.html">Developer Information</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tower.html">Ansible Tower</a></li>
-<li class="toctree-l1"><a class="reference internal" href="community.html">Community Information</a></li>
-<li class="toctree-l1"><a class="reference internal" href="galaxy.html">Ansible Galaxy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="YAMLSyntax.html">YAML Syntax</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guru.html">Ansible Guru</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alternatives_module.html">alternatives - Manages alternative programs for common commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="at_module.html">at - Schedule the execution of a command or script file via the at command.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authorized_key_module.html">authorized_key - Adds or removes an SSH authorized key</a></li>
+<li class="toctree-l1"><a class="reference internal" href="capabilities_module.html">capabilities - Manage Linux capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cron_module.html">cron - Manage cron.d and crontab entries.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debconf_module.html">debconf - Configure a .deb package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="facter_module.html">facter - Runs the discovery program <em>facter</em> on the remote system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filesystem_module.html">filesystem - Makes file system on block device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firewalld_module.html">firewalld - Manage arbitrary ports/services with firewalld</a></li>
+<li class="toctree-l1"><a class="reference internal" href="group_module.html">group - Add or remove groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hostname_module.html">hostname - Manage hostname</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kernel_blacklist_module.html">kernel_blacklist - Blacklist kernel modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="locale_gen_module.html">locale_gen - Creates of removes locales.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lvg_module.html">lvg - Configure LVM volume groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lvol_module.html">lvol - Configure LVM logical volumes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modprobe_module.html">modprobe - Add or remove kernel modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mount_module.html">mount - Control active and configured mount points</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ohai_module.html">ohai - Returns inventory data from <em>Ohai</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="open_iscsi_module.html">open_iscsi - Manage iscsi targets with open-iscsi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ping_module.html">ping - Try to connect to host and return <tt class="docutils literal"><span class="pre">pong</span></tt> on success.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seboolean_module.html">seboolean - Toggles SELinux booleans.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="selinux_module.html">selinux - Change policy and state of SELinux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="service_module.html">service - Manage services.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_module.html">setup - Gathers facts about remote hosts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sysctl_module.html">sysctl - Manage entries in sysctl.conf.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ufw_module.html">ufw - Manage firewall with UFW</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_module.html">user - Manage user accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zfs_module.html">zfs - Manage zfs</a></li>
 </ul>
-</div>
 </div>
 </div>
 
@@ -416,8 +416,10 @@ upgrade remote daemons or the problem of not being able to manage systems becaus
   
     <div class="rst-footer-buttons">
       
-        <a href="intro.html" class="btn btn-neutral float-right" title="Introduction"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="alternatives_module.html" class="btn btn-neutral float-right" title="alternatives - Manages alternative programs for common commands"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
+      
+        <a href="subversion_module.html" class="btn btn-neutral" title="subversion - Deploys a subversion repository."><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

@@ -21,7 +21,7 @@
 <!-- end analytics -->
 
   
-  <title>Ansible Documentation &mdash; Ansible Documentation</title>
+  <title>Accelerated Mode &mdash; Ansible Documentation</title>
   
 
   
@@ -58,8 +58,10 @@
   
 
   
-    <link rel="top" title="Ansible Documentation" href="#"/>
-        <link rel="next" title="Introduction" href="intro.html"/> 
+    <link rel="top" title="Ansible Documentation" href="index.html"/>
+        <link rel="up" title="Playbooks: Special Topics" href="playbooks_special_topics.html"/>
+        <link rel="next" title="Asynchronous Actions and Polling" href="playbooks_async.html"/>
+        <link rel="prev" title="Playbooks: Special Topics" href="playbooks_special_topics.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
@@ -91,11 +93,11 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div style='background-color:#64C5C7'>
         <br/>
-        <center><a href="#"><img src="http://cdn2.hubspot.net/hub/330046/file-445792629-png/ANSI_logotype_web_white.png" style="border-radius:0;background-color:#64C5C7;width:214px;height:26px;margin:'auto auto auto auto'"></a></center>
+        <center><a href="index.html"><img src="http://cdn2.hubspot.net/hub/330046/file-445792629-png/ANSI_logotype_web_white.png" style="border-radius:0;background-color:#64C5C7;width:214px;height:26px;margin:'auto auto auto auto'"></a></center>
         <br/>      
       </div>
       <div class="wy-side-nav-search" style="background-color:#64C5C7;height=80px;margin:'auto auto auto auto'">
-        <!-- <a href="#" class="icon icon-home"> Ansible Documentation</a> -->
+        <!-- <a href="index.html" class="icon icon-home"> Ansible Documentation</a> -->
         <!-- <form class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
   <input type="hidden" name="check_keywords" value="yes" />
@@ -162,7 +164,7 @@
       <div id="menu-id" class="wy-menu wy-menu-vertical" data-spy="affix">
         
         
-            <ul>
+            <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="intro_installation.html">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_getting_started.html">Getting Started</a></li>
@@ -183,8 +185,8 @@
 <li class="toctree-l2"><a class="reference internal" href="playbooks_best_practices.html">Best Practices</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="playbooks_special_topics.html">Playbooks: Special Topics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="playbooks_acceleration.html">Accelerated Mode</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="playbooks_special_topics.html">Playbooks: Special Topics</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Accelerated Mode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_async.html">Asynchronous Actions and Polling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_checkmode.html">Check Mode (&#8220;Dry Run&#8221;)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_delegation.html">Delegation, Rolling Updates, and Local Actions</a></li>
@@ -363,11 +365,11 @@
       <div class="wy-nav-content">
         <div class="rst-content">
           <ul class="wy-breadcrumbs">
-  <li><a href="#">Docs</a> &raquo;</li>
-  <li><a href="">Ansible Documentation</a></li>
+  <li><a href="index.html">Docs</a> &raquo;</li>
+  <li><a href="">Accelerated Mode</a></li>
   
     <li class="wy-breadcrumbs-aside">
-      <a href="https://github.com/ansible/ansible/blob/devel/docsite/rst/index.rst" class="icon icon-github"> Edit on GitHub</a>
+      <a href="https://github.com/ansible/ansible/blob/devel/docsite/rst/playbooks_acceleration.rst" class="icon icon-github"> Edit on GitHub</a>
     </li>
   
 </ul>
@@ -375,37 +377,76 @@
 
           <div id="page-content">
           
-  <div class="section" id="ansible-documentation">
-<h1>Ansible Documentation<a class="headerlink" href="#ansible-documentation" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="about-ansible">
-<h2>About Ansible<a class="headerlink" href="#about-ansible" title="Permalink to this headline">¶</a></h2>
-<p>Welcome to the Ansible documentation!</p>
-<p>Ansible is an IT automation tool.  It can configure systems, deploy software, and orchestrate more advanced IT tasks
-such as continuous deployments or zero downtime rolling updates.</p>
-<p>Ansible&#8217;s goals are foremost those of simplicity and maximum ease of use. It also has a strong focus on security and reliability, featuring a minimum of moving parts, usage of OpenSSH for transport (with an accelerated socket mode and pull modes as alternatives), and a language that is designed around auditability by humans &#8211; even those not familiar with the program.</p>
-<p>We believe simplicity is relevant to all sizes of environments and design for busy users of all types &#8211; whether this means developers, sysadmins, release engineers, IT managers, and everywhere in between. Ansible is appropriate for managing small setups with a handful of instances as well as enterprise environments with many thousands.</p>
-<p>Ansible manages machines in an agentless manner. There is never a question of how to
-upgrade remote daemons or the problem of not being able to manage systems because daemons are uninstalled.  As OpenSSH is one of the most peer reviewed open source components, the security exposure of using the tool is greatly reduced.  Ansible is decentralized &#8211; it relies on your existing OS credentials to control access to remote machines; if needed it can easily connect with Kerberos, LDAP, and other centralized authentication management systems.</p>
-<p>This documentation covers the current released version of Ansible (1.5.3) and also some development version features (1.6).  For recent features, in each section, the version of Ansible where the feature is added is indicated.  Ansible, Inc releases a new major release of Ansible approximately every 2 months.  The core application evolves somewhat conservatively, valuing simplicity in language design and setup, while the community around new modules and plugins being developed and contributed moves very very quickly, typically adding 20 or so new modules in each release.</p>
-<div class="toctree-wrapper compound" id="an-introduction">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart Video</a></li>
-<li class="toctree-l1"><a class="reference internal" href="playbooks.html">Playbooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="playbooks_special_topics.html">Playbooks: Special Topics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">About Modules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules_by_category.html">Module Index</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guides.html">Detailed Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developing.html">Developer Information</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tower.html">Ansible Tower</a></li>
-<li class="toctree-l1"><a class="reference internal" href="community.html">Community Information</a></li>
-<li class="toctree-l1"><a class="reference internal" href="galaxy.html">Ansible Galaxy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="YAMLSyntax.html">YAML Syntax</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guru.html">Ansible Guru</a></li>
-</ul>
+  <div class="section" id="accelerated-mode">
+<h1>Accelerated Mode<a class="headerlink" href="#accelerated-mode" title="Permalink to this headline">¶</a></h1>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.3.</span></p>
 </div>
+<div class="section" id="you-might-not-need-this">
+<h2>You Might Not Need This!<a class="headerlink" href="#you-might-not-need-this" title="Permalink to this headline">¶</a></h2>
+<p>Are you running Ansible 1.5 or later?  If so, you may not need accelerate mode due to a new feature called &#8220;SSH pipelining&#8221; and should read the <a class="reference internal" href="intro_configuration.html#pipelining"><em>pipelining</em></a> section of the documentation.</p>
+<dl class="docutils">
+<dt>For users on 1.5 and later, accelerate mode only makes sense if you (A) are managing from an Enterprise Linux 6 or earlier host</dt>
+<dd>and still are on paramiko, or (B) can&#8217;t enable TTYs with sudo as described in the pipelining docs.</dd>
+</dl>
+<p>If you can use pipelining, Ansible will reduce the amount of files transferred over the wire,
+making everything much more efficient, and performance will be on par with accelerate mode in nearly all cases, possibly excluding very large file transfer.   Because less moving parts are involved, pipelining is better than accelerate mode for nearly all use cases.</p>
+<p>Accelerate mode remains around in support of EL6
+control machines and other constrained environments.</p>
+</div>
+<div class="section" id="accelerate-mode-details">
+<h2>Accelerate Mode Details<a class="headerlink" href="#accelerate-mode-details" title="Permalink to this headline">¶</a></h2>
+<p>While OpenSSH using the ControlPersist feature is quite fast and scalable, there is a certain small amount of overhead involved in
+using SSH connections.  While many people will not encounter a need, if you are running on a platform that doesn&#8217;t have ControlPersist support (such as an EL6 control machine), you&#8217;ll probably be even more interested in tuning options.</p>
+<p>Accelerate mode is there to help connections work faster, but still uses SSH for initial secure key exchange.  There is no
+additional public key infrastructure to manage, and this does not require things like NTP or even DNS.</p>
+<p>Accelerated mode can be anywhere from 2-6x faster than SSH with ControlPersist enabled, and 10x faster than paramiko.</p>
+<p>Accelerated mode works by launching a temporary daemon over SSH. Once the daemon is running, Ansible will connect directly
+to it via a socket connection. Ansible secures this communication by using a temporary AES key that is exchanged during
+the SSH connection (this key is different for every host, and is also regenerated periodically).</p>
+<p>By default, Ansible will use port 5099 for the accelerated connection, though this is configurable. Once running, the daemon will accept connections for 30 minutes, after which time it will terminate itself and need to be restarted over SSH.</p>
+<p>Accelerated mode offers several improvements over the (deprecated) original fireball mode from which it was based:</p>
+<ul class="simple">
+<li>No bootstrapping is required, only a single line needs to be added to each play you wish to run in accelerated mode.</li>
+<li>Support for sudo commands (see below for more details and caveats) is available.</li>
+<li>There are fewer requirements. ZeroMQ is no longer required, nor are there any special packages beyond python-keyczar</li>
+<li>python 2.5 or higher is required.</li>
+</ul>
+<p>In order to use accelerated mode, simply add <cite>accelerate: true</cite> to your play:</p>
+<div class="highlight-python"><div class="highlight"><pre>---
+
+- hosts: all
+  accelerate: true
+
+  tasks:
+
+  - name: some task
+    command: echo {{ item }}
+    with_items:
+    - foo
+    - bar
+    - baz
+</pre></div>
+</div>
+<p>If you wish to change the port Ansible will use for the accelerated connection, just add the <cite>accelerated_port</cite> option:</p>
+<div class="highlight-python"><div class="highlight"><pre>---
+
+- hosts: all
+  accelerate: true
+  # default port is 5099
+  accelerate_port: 10000
+</pre></div>
+</div>
+<p>The <cite>accelerate_port</cite> option can also be specified in the environment variable ACCELERATE_PORT, or in your <cite>ansible.cfg</cite> configuration:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="n">accelerate</span><span class="p">]</span>
+<span class="n">accelerate_port</span> <span class="o">=</span> <span class="mi">5099</span>
+</pre></div>
+</div>
+<p>As noted above, accelerated mode also supports running tasks via sudo, however there are two important caveats:</p>
+<ul class="simple">
+<li>You must remove requiretty from your sudoers options.</li>
+<li>Prompting for the sudo password is not yet supported, so the NOPASSWD option is required for sudo&#8217;ed commands.</li>
+</ul>
 </div>
 </div>
 
@@ -416,8 +457,10 @@ upgrade remote daemons or the problem of not being able to manage systems becaus
   
     <div class="rst-footer-buttons">
       
-        <a href="intro.html" class="btn btn-neutral float-right" title="Introduction"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="playbooks_async.html" class="btn btn-neutral float-right" title="Asynchronous Actions and Polling"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
+      
+        <a href="playbooks_special_topics.html" class="btn btn-neutral" title="Playbooks: Special Topics"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

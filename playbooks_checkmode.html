@@ -21,7 +21,7 @@
 <!-- end analytics -->
 
   
-  <title>Ansible Documentation &mdash; Ansible Documentation</title>
+  <title>Check Mode (“Dry Run”) &mdash; Ansible Documentation</title>
   
 
   
@@ -58,8 +58,10 @@
   
 
   
-    <link rel="top" title="Ansible Documentation" href="#"/>
-        <link rel="next" title="Introduction" href="intro.html"/> 
+    <link rel="top" title="Ansible Documentation" href="index.html"/>
+        <link rel="up" title="Playbooks: Special Topics" href="playbooks_special_topics.html"/>
+        <link rel="next" title="Delegation, Rolling Updates, and Local Actions" href="playbooks_delegation.html"/>
+        <link rel="prev" title="Asynchronous Actions and Polling" href="playbooks_async.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
@@ -91,11 +93,11 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div style='background-color:#64C5C7'>
         <br/>
-        <center><a href="#"><img src="http://cdn2.hubspot.net/hub/330046/file-445792629-png/ANSI_logotype_web_white.png" style="border-radius:0;background-color:#64C5C7;width:214px;height:26px;margin:'auto auto auto auto'"></a></center>
+        <center><a href="index.html"><img src="http://cdn2.hubspot.net/hub/330046/file-445792629-png/ANSI_logotype_web_white.png" style="border-radius:0;background-color:#64C5C7;width:214px;height:26px;margin:'auto auto auto auto'"></a></center>
         <br/>      
       </div>
       <div class="wy-side-nav-search" style="background-color:#64C5C7;height=80px;margin:'auto auto auto auto'">
-        <!-- <a href="#" class="icon icon-home"> Ansible Documentation</a> -->
+        <!-- <a href="index.html" class="icon icon-home"> Ansible Documentation</a> -->
         <!-- <form class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
   <input type="hidden" name="check_keywords" value="yes" />
@@ -162,7 +164,7 @@
       <div id="menu-id" class="wy-menu wy-menu-vertical" data-spy="affix">
         
         
-            <ul>
+            <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="intro_installation.html">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_getting_started.html">Getting Started</a></li>
@@ -183,10 +185,10 @@
 <li class="toctree-l2"><a class="reference internal" href="playbooks_best_practices.html">Best Practices</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="playbooks_special_topics.html">Playbooks: Special Topics</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="playbooks_special_topics.html">Playbooks: Special Topics</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="playbooks_acceleration.html">Accelerated Mode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_async.html">Asynchronous Actions and Polling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="playbooks_checkmode.html">Check Mode (&#8220;Dry Run&#8221;)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Check Mode (&#8220;Dry Run&#8221;)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_delegation.html">Delegation, Rolling Updates, and Local Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_environment.html">Setting the Environment (and Working With Proxies)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_error_handling.html">Error Handling In Playbooks</a></li>
@@ -363,11 +365,11 @@
       <div class="wy-nav-content">
         <div class="rst-content">
           <ul class="wy-breadcrumbs">
-  <li><a href="#">Docs</a> &raquo;</li>
-  <li><a href="">Ansible Documentation</a></li>
+  <li><a href="index.html">Docs</a> &raquo;</li>
+  <li><a href="">Check Mode (&#8220;Dry Run&#8221;)</a></li>
   
     <li class="wy-breadcrumbs-aside">
-      <a href="https://github.com/ansible/ansible/blob/devel/docsite/rst/index.rst" class="icon icon-github"> Edit on GitHub</a>
+      <a href="https://github.com/ansible/ansible/blob/devel/docsite/rst/playbooks_checkmode.rst" class="icon icon-github"> Edit on GitHub</a>
     </li>
   
 </ul>
@@ -375,36 +377,61 @@
 
           <div id="page-content">
           
-  <div class="section" id="ansible-documentation">
-<h1>Ansible Documentation<a class="headerlink" href="#ansible-documentation" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="about-ansible">
-<h2>About Ansible<a class="headerlink" href="#about-ansible" title="Permalink to this headline">¶</a></h2>
-<p>Welcome to the Ansible documentation!</p>
-<p>Ansible is an IT automation tool.  It can configure systems, deploy software, and orchestrate more advanced IT tasks
-such as continuous deployments or zero downtime rolling updates.</p>
-<p>Ansible&#8217;s goals are foremost those of simplicity and maximum ease of use. It also has a strong focus on security and reliability, featuring a minimum of moving parts, usage of OpenSSH for transport (with an accelerated socket mode and pull modes as alternatives), and a language that is designed around auditability by humans &#8211; even those not familiar with the program.</p>
-<p>We believe simplicity is relevant to all sizes of environments and design for busy users of all types &#8211; whether this means developers, sysadmins, release engineers, IT managers, and everywhere in between. Ansible is appropriate for managing small setups with a handful of instances as well as enterprise environments with many thousands.</p>
-<p>Ansible manages machines in an agentless manner. There is never a question of how to
-upgrade remote daemons or the problem of not being able to manage systems because daemons are uninstalled.  As OpenSSH is one of the most peer reviewed open source components, the security exposure of using the tool is greatly reduced.  Ansible is decentralized &#8211; it relies on your existing OS credentials to control access to remote machines; if needed it can easily connect with Kerberos, LDAP, and other centralized authentication management systems.</p>
-<p>This documentation covers the current released version of Ansible (1.5.3) and also some development version features (1.6).  For recent features, in each section, the version of Ansible where the feature is added is indicated.  Ansible, Inc releases a new major release of Ansible approximately every 2 months.  The core application evolves somewhat conservatively, valuing simplicity in language design and setup, while the community around new modules and plugins being developed and contributed moves very very quickly, typically adding 20 or so new modules in each release.</p>
-<div class="toctree-wrapper compound" id="an-introduction">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart Video</a></li>
-<li class="toctree-l1"><a class="reference internal" href="playbooks.html">Playbooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="playbooks_special_topics.html">Playbooks: Special Topics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">About Modules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules_by_category.html">Module Index</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guides.html">Detailed Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developing.html">Developer Information</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tower.html">Ansible Tower</a></li>
-<li class="toctree-l1"><a class="reference internal" href="community.html">Community Information</a></li>
-<li class="toctree-l1"><a class="reference internal" href="galaxy.html">Ansible Galaxy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="YAMLSyntax.html">YAML Syntax</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guru.html">Ansible Guru</a></li>
+  <div class="section" id="check-mode-dry-run">
+<h1><a class="toc-backref" href="#id1">Check Mode (&#8220;Dry Run&#8221;)</a><a class="headerlink" href="#check-mode-dry-run" title="Permalink to this headline">¶</a></h1>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.1.</span></p>
+</div>
+<div class="contents topic" id="topics">
+<p class="topic-title first">Topics</p>
+<ul class="simple">
+<li><a class="reference internal" href="#check-mode-dry-run" id="id1">Check Mode (&#8220;Dry Run&#8221;)</a><ul>
+<li><a class="reference internal" href="#running-a-task-in-check-mode" id="id2">Running a task in check mode</a></li>
+<li><a class="reference internal" href="#showing-differences-with-diff" id="id3">Showing Differences with <tt class="docutils literal"><span class="pre">--diff</span></tt></a></li>
 </ul>
+</li>
+</ul>
+</div>
+<p>When ansible-playbook is executed with <tt class="docutils literal"><span class="pre">--check</span></tt> it will not make any changes on remote systems.  Instead, any module
+instrumented to support &#8216;check mode&#8217; (which contains most of the primary core modules, but it is not required that all modules do
+this) will report what changes they would have made rather than making them.  Other modules that do not support check mode will also take no action, but just will not report what changes they might have made.</p>
+<p>Check mode is just a simulation, and if you have steps that use conditionals that depend on the results of prior commands,
+it may be less useful for you.  However it is great for one-node-at-time basic configuration management use cases.</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre>ansible-playbook foo.yml --check
+</pre></div>
+</div>
+<div class="section" id="running-a-task-in-check-mode">
+<span id="forcing-to-run-in-check-mode"></span><h2><a class="toc-backref" href="#id2">Running a task in check mode</a><a class="headerlink" href="#running-a-task-in-check-mode" title="Permalink to this headline">¶</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.3.</span></p>
+</div>
+<p>Sometimes you may want to have a task to be executed even in check
+mode. To achieve this, use the <cite>always_run</cite> clause on the task. Its
+value is a Jinja2 expression, just like the <cite>when</cite> clause. In simple
+cases a boolean YAML value would be sufficient as a value.</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre>tasks:
+
+  - name: this task is run even in check mode
+    command: /something/to/run --even-in-check-mode
+    always_run: yes
+</pre></div>
+</div>
+<p>As a reminder, a task with a <cite>when</cite> clause evaluated to false, will
+still be skipped even if it has a <cite>always_run</cite> clause evaluated to
+true.</p>
+</div>
+<div class="section" id="showing-differences-with-diff">
+<span id="diff-mode"></span><h2><a class="toc-backref" href="#id3">Showing Differences with <tt class="docutils literal"><span class="pre">--diff</span></tt></a><a class="headerlink" href="#showing-differences-with-diff" title="Permalink to this headline">¶</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.1.</span></p>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">--diff</span></tt> option to ansible-playbook works great with <tt class="docutils literal"><span class="pre">--check</span></tt> (detailed above) but can also be used by itself.  When this flag is supplied, if any templated files on the remote system are changed, and the ansible-playbook CLI will report back
+the textual changes made to the file (or, if used with <tt class="docutils literal"><span class="pre">--check</span></tt>, the changes that would have been made).  Since the diff
+feature produces a large amount of output, it is best used when checking a single host at a time, like so:</p>
+<div class="highlight-python"><div class="highlight"><pre>ansible-playbook foo.yml --check --diff --limit foo.example.com
+</pre></div>
 </div>
 </div>
 </div>
@@ -416,8 +443,10 @@ upgrade remote daemons or the problem of not being able to manage systems becaus
   
     <div class="rst-footer-buttons">
       
-        <a href="intro.html" class="btn btn-neutral float-right" title="Introduction"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="playbooks_delegation.html" class="btn btn-neutral float-right" title="Delegation, Rolling Updates, and Local Actions"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
+      
+        <a href="playbooks_async.html" class="btn btn-neutral" title="Asynchronous Actions and Polling"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

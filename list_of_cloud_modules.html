@@ -21,7 +21,7 @@
 <!-- end analytics -->
 
   
-  <title>Ansible Documentation &mdash; Ansible Documentation</title>
+  <title>Cloud Modules &mdash; Ansible Documentation</title>
   
 
   
@@ -58,8 +58,10 @@
   
 
   
-    <link rel="top" title="Ansible Documentation" href="#"/>
-        <link rel="next" title="Introduction" href="intro.html"/> 
+    <link rel="top" title="Ansible Documentation" href="index.html"/>
+        <link rel="up" title="Module Index" href="modules_by_category.html"/>
+        <link rel="next" title="cloudformation - create a AWS CloudFormation stack" href="cloudformation_module.html"/>
+        <link rel="prev" title="zypper_repository - Add and remove Zypper repositories" href="zypper_repository_module.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
@@ -91,11 +93,11 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div style='background-color:#64C5C7'>
         <br/>
-        <center><a href="#"><img src="http://cdn2.hubspot.net/hub/330046/file-445792629-png/ANSI_logotype_web_white.png" style="border-radius:0;background-color:#64C5C7;width:214px;height:26px;margin:'auto auto auto auto'"></a></center>
+        <center><a href="index.html"><img src="http://cdn2.hubspot.net/hub/330046/file-445792629-png/ANSI_logotype_web_white.png" style="border-radius:0;background-color:#64C5C7;width:214px;height:26px;margin:'auto auto auto auto'"></a></center>
         <br/>      
       </div>
       <div class="wy-side-nav-search" style="background-color:#64C5C7;height=80px;margin:'auto auto auto auto'">
-        <!-- <a href="#" class="icon icon-home"> Ansible Documentation</a> -->
+        <!-- <a href="index.html" class="icon icon-home"> Ansible Documentation</a> -->
         <!-- <form class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
   <input type="hidden" name="check_keywords" value="yes" />
@@ -162,7 +164,7 @@
       <div id="menu-id" class="wy-menu wy-menu-vertical" data-spy="affix">
         
         
-            <ul>
+            <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="intro_installation.html">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_getting_started.html">Getting Started</a></li>
@@ -200,9 +202,9 @@
 <li class="toctree-l2"><a class="reference internal" href="modules.html#introduction">Introduction</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="modules_by_category.html">Module Index</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="modules_by_category.html">Module Index</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="list_of_all_modules.html">All Modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="list_of_cloud_modules.html">Cloud Modules</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Cloud Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="list_of_commands_modules.html">Commands Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="list_of_database_modules.html">Database Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="list_of_files_modules.html">Files Modules</a></li>
@@ -363,49 +365,77 @@
       <div class="wy-nav-content">
         <div class="rst-content">
           <ul class="wy-breadcrumbs">
-  <li><a href="#">Docs</a> &raquo;</li>
-  <li><a href="">Ansible Documentation</a></li>
-  
-    <li class="wy-breadcrumbs-aside">
-      <a href="https://github.com/ansible/ansible/blob/devel/docsite/rst/index.rst" class="icon icon-github"> Edit on GitHub</a>
-    </li>
+  <li><a href="index.html">Docs</a> &raquo;</li>
+  <li><a href="">Cloud Modules</a></li>
   
 </ul>
 <hr/>
 
           <div id="page-content">
           
-  <div class="section" id="ansible-documentation">
-<h1>Ansible Documentation<a class="headerlink" href="#ansible-documentation" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="about-ansible">
-<h2>About Ansible<a class="headerlink" href="#about-ansible" title="Permalink to this headline">¶</a></h2>
-<p>Welcome to the Ansible documentation!</p>
-<p>Ansible is an IT automation tool.  It can configure systems, deploy software, and orchestrate more advanced IT tasks
-such as continuous deployments or zero downtime rolling updates.</p>
-<p>Ansible&#8217;s goals are foremost those of simplicity and maximum ease of use. It also has a strong focus on security and reliability, featuring a minimum of moving parts, usage of OpenSSH for transport (with an accelerated socket mode and pull modes as alternatives), and a language that is designed around auditability by humans &#8211; even those not familiar with the program.</p>
-<p>We believe simplicity is relevant to all sizes of environments and design for busy users of all types &#8211; whether this means developers, sysadmins, release engineers, IT managers, and everywhere in between. Ansible is appropriate for managing small setups with a handful of instances as well as enterprise environments with many thousands.</p>
-<p>Ansible manages machines in an agentless manner. There is never a question of how to
-upgrade remote daemons or the problem of not being able to manage systems because daemons are uninstalled.  As OpenSSH is one of the most peer reviewed open source components, the security exposure of using the tool is greatly reduced.  Ansible is decentralized &#8211; it relies on your existing OS credentials to control access to remote machines; if needed it can easily connect with Kerberos, LDAP, and other centralized authentication management systems.</p>
-<p>This documentation covers the current released version of Ansible (1.5.3) and also some development version features (1.6).  For recent features, in each section, the version of Ansible where the feature is added is indicated.  Ansible, Inc releases a new major release of Ansible approximately every 2 months.  The core application evolves somewhat conservatively, valuing simplicity in language design and setup, while the community around new modules and plugins being developed and contributed moves very very quickly, typically adding 20 or so new modules in each release.</p>
-<div class="toctree-wrapper compound" id="an-introduction">
+  <div class="section" id="cloud-modules">
+<h1>Cloud Modules<a class="headerlink" href="#cloud-modules" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart Video</a></li>
-<li class="toctree-l1"><a class="reference internal" href="playbooks.html">Playbooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="playbooks_special_topics.html">Playbooks: Special Topics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">About Modules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules_by_category.html">Module Index</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guides.html">Detailed Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developing.html">Developer Information</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tower.html">Ansible Tower</a></li>
-<li class="toctree-l1"><a class="reference internal" href="community.html">Community Information</a></li>
-<li class="toctree-l1"><a class="reference internal" href="galaxy.html">Ansible Galaxy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="YAMLSyntax.html">YAML Syntax</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guru.html">Ansible Guru</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cloudformation_module.html">cloudformation - create a AWS CloudFormation stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="digital_ocean_module.html">digital_ocean - Create/delete a droplet/SSH_key in DigitalOcean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="digital_ocean_domain_module.html">digital_ocean_domain - Create/delete a DNS record in DigitalOcean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="digital_ocean_sshkey_module.html">digital_ocean_sshkey - Create/delete an SSH key in DigitalOcean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker_module.html">docker - manage docker containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker_image_module.html">docker_image - manage docker images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ec2_module.html">ec2 - create, terminate, start or stop an instance in ec2, return instanceid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ec2_ami_module.html">ec2_ami - create or destroy an image in ec2, return imageid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ec2_ami_search_module.html">ec2_ami_search - Retrieve AWS AMI for a given operating system.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ec2_asg_module.html">ec2_asg - Create or delete AWS Autoscaling Groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ec2_eip_module.html">ec2_eip - associate an EC2 elastic IP with an instance.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ec2_elb_module.html">ec2_elb - De-registers or registers instances from EC2 ELBs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ec2_elb_lb_module.html">ec2_elb_lb - Creates or destroys Amazon ELB. - Returns information about the load balancer. - Will be marked changed when called only if state is changed.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ec2_facts_module.html">ec2_facts - Gathers facts about remote hosts within ec2 (aws)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ec2_group_module.html">ec2_group - maintain an ec2 VPC security group.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ec2_key_module.html">ec2_key - maintain an ec2 key pair.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ec2_lc_module.html">ec2_lc - Create or delete AWS Autoscaling Launch Configurations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ec2_snapshot_module.html">ec2_snapshot - creates a snapshot from an existing volume</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ec2_tag_module.html">ec2_tag - create and remove tag(s) to ec2 resources.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ec2_vol_module.html">ec2_vol - create and attach a volume, return volume id and device map</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ec2_vpc_module.html">ec2_vpc - configure AWS virtual private clouds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="elasticache_module.html">elasticache - Manage cache clusters in Amazon Elasticache.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gc_storage_module.html">gc_storage - This module manages objects/buckets in Google Cloud Storage.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gce_module.html">gce - create or terminate GCE instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gce_lb_module.html">gce_lb - create/destroy GCE load-balancer resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gce_net_module.html">gce_net - create/destroy GCE networks and firewall rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gce_pd_module.html">gce_pd - utilize GCE persistent disk resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glance_image_module.html">glance_image - Add/Delete images from glance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keystone_user_module.html">keystone_user - Manage OpenStack Identity (keystone) users, tenants and roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linode_module.html">linode - create / delete / stop / restart an instance in Linode Public Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nova_compute_module.html">nova_compute - Create/Delete VMs from OpenStack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nova_keypair_module.html">nova_keypair - Add/Delete key pair from nova</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ovirt_module.html">ovirt - oVirt/RHEV platform management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quantum_floating_ip_module.html">quantum_floating_ip - Add/Remove floating IP from an instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quantum_floating_ip_associate_module.html">quantum_floating_ip_associate - Associate or disassociate a particular floating IP with an instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quantum_network_module.html">quantum_network - Creates/Removes networks from OpenStack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quantum_router_module.html">quantum_router - Create or Remove router from openstack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quantum_router_gateway_module.html">quantum_router_gateway - set/unset a gateway interface for the router with the specified external network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quantum_router_interface_module.html">quantum_router_interface - Attach/Dettach a subnet&#8217;s interface to a router</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quantum_subnet_module.html">quantum_subnet - Add/Remove floating IP from an instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rax_module.html">rax - create / delete an instance in Rackspace Public Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rax_clb_module.html">rax_clb - create / delete a load balancer in Rackspace Public Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rax_clb_nodes_module.html">rax_clb_nodes - add, modify and remove nodes from a Rackspace Cloud Load Balancer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rax_dns_module.html">rax_dns - Manage domains on Rackspace Cloud DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rax_dns_record_module.html">rax_dns_record - Manage DNS records on Rackspace Cloud DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rax_facts_module.html">rax_facts - Gather facts for Rackspace Cloud Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rax_files_module.html">rax_files - Manipulate Rackspace Cloud Files Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rax_files_objects_module.html">rax_files_objects - Upload, download, and delete objects in Rackspace Cloud Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rax_identity_module.html">rax_identity - Load Rackspace Cloud Identity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rax_keypair_module.html">rax_keypair - Create a keypair for use with Rackspace Cloud Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rax_network_module.html">rax_network - create / delete an isolated network in Rackspace Public Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rax_queue_module.html">rax_queue - create / delete a queue in Rackspace Public Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rds_module.html">rds - create, delete, or modify an Amazon rds instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rds_param_group_module.html">rds_param_group - manage RDS parameter groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rds_subnet_group_module.html">rds_subnet_group - manage RDS database subnet groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="route53_module.html">route53 - add or delete entries in Amazons Route53 DNS service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="s3_module.html">s3 - idempotent S3 module putting a file into S3.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virt_module.html">virt - Manages virtual machines supported by libvirt</a></li>
 </ul>
-</div>
 </div>
 </div>
 
@@ -416,8 +446,10 @@ upgrade remote daemons or the problem of not being able to manage systems becaus
   
     <div class="rst-footer-buttons">
       
-        <a href="intro.html" class="btn btn-neutral float-right" title="Introduction"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="cloudformation_module.html" class="btn btn-neutral float-right" title="cloudformation - create a AWS CloudFormation stack"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
+      
+        <a href="zypper_repository_module.html" class="btn btn-neutral" title="zypper_repository - Add and remove Zypper repositories"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
